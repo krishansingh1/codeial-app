@@ -27,7 +27,7 @@ const customFetch = async (url, { body, ...customConfig }) => {
     const response = await fetch(url, config);
     const data = await response.json();
 
-    if (response.success) {
+    if (data.success) {
       return {
         data: data.data,
         success: true,
@@ -39,7 +39,7 @@ const customFetch = async (url, { body, ...customConfig }) => {
     console.error(error);
     return {
       message: error.message,
-      message: false,
+      success: false,
     };
   }
 };

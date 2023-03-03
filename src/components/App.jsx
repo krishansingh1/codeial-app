@@ -6,6 +6,8 @@ function App() {
       const response = await getPosts();
       console.log('response', response);
     };
+
+    fetchPosts();
   }, []);
   return (
     <div className="App">
