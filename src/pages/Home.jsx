@@ -6,7 +6,7 @@ const Home = (props) => {
   return (
     <div className={styles.postsList}>
       {posts.map((post) => (
-        <div className={styles.postWrapper} key={post._id}>
+        <div className={styles.postWrapper} key={`posts-${post._id}`}>
           <div className={styles.postHeader}>
             <div className={styles.postAvatar}>
               <img
