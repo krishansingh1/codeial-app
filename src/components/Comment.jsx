@@ -1,3 +1,5 @@
+import styles from '../styles/home.module.css';
+
 const Comment = () => {
   return (
     <div className={styles.postCommentsList}>

@@ -1,5 +1,6 @@
 import styles from '../styles/home.module.css';
 import PropTypes from 'prop-types';
+import Comment from '../components/Comment';
 
 const Home = (props) => {
   const { posts } = props;
@@ -41,7 +42,7 @@ const Home = (props) => {
               <input placeholder="Start typing a comment" />
             </div>
 
-           
+            <Comment />
           </div>
         </div>
       ))}
