@@ -11,7 +11,7 @@ function App() {
     const fetchPosts = async () => {
       const response = await getPosts();
       console.log('response', response);
-      if (response.succcess) {
+      if (response.success) {
         setPost(response.data.posts);
       }
 
