@@ -4,7 +4,7 @@ import Home from '../pages/Home';
 import Loader from './Loader';
 
 function App() {
-  const [posts, setPosts] = useState('');
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,12 +20,13 @@ function App() {
 
     fetchPosts();
   }, []);
+
   if (loading) {
-    <Loader />;
+    return <Loader />;
   }
   return (
     <div className="App">
-      <Home posts={posts} />
+      <Home posts={posts} key={posts}/>
     </div>
   );
 }
