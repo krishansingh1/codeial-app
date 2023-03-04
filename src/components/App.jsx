@@ -4,7 +4,7 @@ import Home from '../pages/Home';
 import Loader from './Loader';
 
 function App() {
-  const [post, setPost] = useState('');
+  const [posts, setPosts] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function App() {
       const response = await getPosts();
       console.log('response', response);
       if (response.success) {
-        setPost(response.data.posts);
+        setPosts(response.data.posts);
       }
 
       setLoading(false);
@@ -20,9 +20,12 @@ function App() {
 
     fetchPosts();
   }, []);
+  if (loading) {
+    <Loader />;
+  }
   return (
     <div className="App">
-      <Home posts={post} />
+      <Home posts={posts} />
     </div>
   );
 }
