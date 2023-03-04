@@ -1,6 +1,7 @@
 import styles from '../styles/home.module.css';
 
-const Home = ({ posts }) => {
+const Home = (props) => {
+  const { posts } = props;
   return (
     <div className={styles.postsList}>
       {posts.map((post) => (
@@ -16,7 +17,7 @@ const Home = ({ posts }) => {
                 <span className={styles.postTime}>a minute ago</span>
               </div>
             </div>
-            <div className={styles.postContent}>Post Conetnt</div>
+            <div className={styles.postContent}>{post.content}</div>
 
             <div className={styles.postActions}>
               <div className={styles.postLike}>

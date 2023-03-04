@@ -24,9 +24,10 @@ function App() {
   if (loading) {
     return <Loader />;
   }
+
   return (
     <div className="App">
-      <Home posts={posts} key={posts}/>
+      <Home posts={posts} />
     </div>
   );
 }
