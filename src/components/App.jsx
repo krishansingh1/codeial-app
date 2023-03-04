@@ -5,20 +5,24 @@ import Loader from './Loader';
 
 function App() {
   const [post, setPost] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await getPosts();
       console.log('response', response);
-      setPost(response.data.posts);
+      if (response.succcess) {
+        setPost(response.data.posts);
+      }
+
+      setLoading(false);
     };
-    
+
     fetchPosts();
   }, []);
   return (
     <div className="App">
-      <Home />
+      <Home posts={post} />
     </div>
   );
 }
