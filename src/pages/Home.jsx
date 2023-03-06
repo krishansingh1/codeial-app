@@ -41,8 +41,11 @@ const Home = (props) => {
             <div className={styles.postCommentBox}>
               <input placeholder="Start typing a comment" />
             </div>
-
-            <Comment />
+            <div className={styles.postCommentsList}>
+              {post.comments.map((comment) => (
+                <Comment comment={comment} />
+              ))}
+            </div>
           </div>
         </div>
       ))}
