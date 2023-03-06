@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import getPosts from '../api';
 import Home from '../pages/Home';
 import Loader from './Loader';
@@ -28,6 +29,9 @@ function App() {
 
   return (
     <div className="App">
+      <Routes>
+        <Route></Route>
+      </Routes>
       <Navbar />
       <Home posts={posts} />
     </div>
