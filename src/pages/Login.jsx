@@ -8,7 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [loggingIn, setLogginIn] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setLogginIn(true);
@@ -17,6 +17,16 @@ const Login = () => {
       toast.error('Please enter both email and password');
       return;
     }
+
+    const response = await login(email, password);
+
+    if (response.success) {
+      toast.success('Successfully LoggedIn!');
+    } else {
+      toast.error(response.message);
+    }
+
+    setLogginIn(false);
   };
 
   return (
