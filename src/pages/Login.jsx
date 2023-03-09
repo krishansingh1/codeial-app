@@ -15,6 +15,7 @@ const Login = () => {
 
     if (!email || !password) {
       toast.error('Please enter both email and password');
+      setLogginIn(false);
       return;
     }
 
