@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from '../styles/login.module.css';
 import toast, { Toaster } from 'react-hot-toast';
+import { login } from '../api';
 
 const Login = () => {
   const [email, setEmail] = useState('');
