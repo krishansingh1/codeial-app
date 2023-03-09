@@ -56,3 +56,5 @@ export const login = (email, password) => {
     body: { email, password },
   });
 }
+
+export default getPosts;
