@@ -12,7 +12,19 @@ export const useProvideAuth = () => {
 
   const login = async (email, password) => {
     const response = await login(email, password);
+
+    if (response.success) {
+      return {
+        success: true,
+      };
+    } else {
+      return {
+        success: false,
+        message: response.message,
+      };
+    }
   };
+
   const logout = () => {};
 
   return {
