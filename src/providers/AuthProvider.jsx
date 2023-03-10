@@ -7,6 +7,7 @@ const initialState = {
   logout: () => {},
   loading: true,
 };
+
 export const AuthContext = createContext(initialState);
 
 export const AuthProvider = ({ children }) => {
