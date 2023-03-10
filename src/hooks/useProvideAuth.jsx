@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import AuthContext from '../providers/AuthProvider';
+
 export const useAuth = () => {
   return useContext(AuthContext);
 };
@@ -18,3 +19,5 @@ export const useProvideAuth = () => {
     loading,
   };
 };
+
+export default useProvideAuth;
