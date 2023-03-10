@@ -2,13 +2,14 @@ import { useState } from 'react';
 import styles from '../styles/login.module.css';
 import toast, { Toaster } from 'react-hot-toast';
 import { login } from '../api';
-import { useAuth } from '../';
+import { useAuth } from '../hooks/useProvideAuth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loggingIn, setLogginIn] = useState(false);
-
+  const auth = useAuth();
+  console.log(auth);
   const handleSubmit = async (e) => {
     e.preventDefault();
 

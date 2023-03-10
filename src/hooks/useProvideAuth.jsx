@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import AuthContext from '../providers/AuthProvider';
-import { login } from '../api';
+import { login as userLogin } from '../api';
 
 export const useAuth = () => {
   return useContext(AuthContext);
@@ -11,7 +11,7 @@ export const useProvideAuth = () => {
   const [loading, setLoading] = useState(true);
 
   const login = async (email, password) => {
-    const response = await login(email, password);
+    const response = await userLogin(email, password);
 
     if (response.success) {
       return {
