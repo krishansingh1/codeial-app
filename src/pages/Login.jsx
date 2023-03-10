@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from '../styles/login.module.css';
 import toast, { Toaster } from 'react-hot-toast';
 import { login } from '../api';
-import { useAuth } from '../hooks';
+import { useAuth } from '../';
 
 const Login = () => {
   const [email, setEmail] = useState('');
