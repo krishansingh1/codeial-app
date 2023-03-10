@@ -14,6 +14,7 @@ export const useProvideAuth = () => {
     const response = await userLogin(email, password);
 
     if (response.success) {
+      setUser(response.data.user);
       return {
         success: true,
       };
@@ -25,7 +26,9 @@ export const useProvideAuth = () => {
     }
   };
 
-  const logout = () => {};
+  const logout = () => {
+    setUser(null);
+  };
 
   return {
     user,

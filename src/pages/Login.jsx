@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import styles from '../styles/login.module.css';
 import toast, { Toaster } from 'react-hot-toast';
-import { login } from '../api';
 import { useAuth } from '../hooks/useProvideAuth';
 
 const Login = () => {
@@ -21,7 +20,7 @@ const Login = () => {
       return;
     }
 
-    const response = await login(email, password);
+    const response = await auth.login(email, password);
 
     if (response.success) {
       toast.success('Successfully LoggedIn!');
