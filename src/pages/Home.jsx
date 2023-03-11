@@ -1,9 +1,31 @@
 import styles from '../styles/home.module.css';
 import PropTypes from 'prop-types';
 import Comment from '../components/Comment';
+import Loader from '../components/Loader';
+import getPosts from '../api';
+import { useEffect, useState } from 'react';
 
-const Home = (props) => {
-  const { posts } = props;
+const Home = () => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await getPosts();
+
+      if (response.success) {
+        setPosts(response.data.posts);
+      }
+      setLoading(false);
+    };
+
+    fetchPosts();
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div className={styles.postsList}>
       {posts.map((post) => (
@@ -35,15 +57,15 @@ const Home = (props) => {
                   src="https://cdn-icons-png.flaticon.com/512/2190/2190552.png"
                   alt="comments-icon"
                 />
-                <span>2</span>
+                <span>{post.comments.length}</span>
               </div>
             </div>
             <div className={styles.postCommentBox}>
               <input placeholder="Start typing a comment" />
             </div>
             <div className={styles.postCommentsList}>
-              {post.comments.map((comment,index) => (
-                <Comment comment={comment} key={index}/>
+              {post.comments.map((comment, index) => (
+                <Comment comment={comment} key={index} />
               ))}
             </div>
           </div>
