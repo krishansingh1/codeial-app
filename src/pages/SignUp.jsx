@@ -41,7 +41,7 @@ const SignUp = () => {
 
       return toast.success('User Signup success fully, please login now');
     } else {
-      return toast.error(response.message);
+      toast.error(response.message);
     }
 
     setSigningUp(false);
