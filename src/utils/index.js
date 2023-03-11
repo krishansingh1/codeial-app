@@ -1,6 +1,6 @@
 export * from './constants';
 
-export const setItemInLocalStorage = (value, key) => {
+export const setItemInLocalStorage = (key,value) => {
     if (!key || !value) {
         return console.error("Can not store in LS");
     }
