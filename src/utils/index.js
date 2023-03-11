@@ -1,5 +1,11 @@
 export * from './constants';
 
+export const setItemInLocalStorage = (value, key) => {
+    if (!key || !value) {
+        return console.error("Can not store in LS");
+    }
+}
+
 export const getFormBody = (params) => {
     let formBody = [];
 
@@ -12,3 +18,5 @@ export const getFormBody = (params) => {
 
     return formBody.join("&");
 }
+
+export default getFormBody;
