@@ -4,6 +4,7 @@ import Loader from './Loader';
 import Navbar from './Navbar';
 import Login from '../pages/Login';
 import { useAuth } from '../hooks/useProvideAuth';
+import SignUp from '../pages/SignUp';
 
 const Page404 = () => {
   return <h1>404</h1>;
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route element={<Page404 />} />
         </Routes>
       </Router>
