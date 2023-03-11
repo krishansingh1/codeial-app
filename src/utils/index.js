@@ -17,7 +17,7 @@ export const getItemFromLocalStorage = (key) => {
 
     // const valueToStore = typeof value !== "string" ? JSON.stringify(value) : value;
 
-    localStorage.getItem(key);
+    return localStorage.getItem(key);
 }
 
 export const removeItemFromLocalStorage = (key) => {
