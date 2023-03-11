@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import getPosts from '../api';
 import Home from '../pages/Home';
 import Loader from './Loader';
 import Navbar from './Navbar';
@@ -23,7 +21,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home posts={[]} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route element={<Page404 />} />
         </Routes>
