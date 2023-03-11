@@ -49,13 +49,24 @@ export const useProvideAuth = () => {
     }
   };
 
+  const signup = async (name, email, password, confirmpassword) => {
+    const response = await register(name, email, password, confirmpassword);
+
+    if (response.success) {
+      return {
+        success: true,
+      };
+    } else {
+      return {
+        success: false,
+        message: response.message,
+      };
+    }
+  };
+
   const logout = () => {
     setUser(null);
     removeItemFromLocalStorage(LOCALSTORAGE_TOKEN_KEY);
-  };
-
-  const signup = async (name, email, password, confirmpassword) => {
-    const response = await register();
   };
 
   return {
@@ -63,6 +74,7 @@ export const useProvideAuth = () => {
     login,
     logout,
     loading,
+    signup,
   };
 };
 
