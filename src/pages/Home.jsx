@@ -42,8 +42,8 @@ const Home = (props) => {
               <input placeholder="Start typing a comment" />
             </div>
             <div className={styles.postCommentsList}>
-              {post.comments.map((comment) => (
-                <Comment comment={comment} />
+              {post.comments.map((comment,index) => (
+                <Comment comment={comment} key={index}/>
               ))}
             </div>
           </div>
