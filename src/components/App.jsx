@@ -7,6 +7,10 @@ import Navbar from './Navbar';
 import Login from '../pages/Login';
 import { useAuth } from '../hooks/useProvideAuth';
 
+const Page404 = () => {
+  return <h1>404</h1>;
+};
+
 function App() {
   // const [posts, setPosts] = useState([]);
   // const [loading, setLoading] = useState(true);
@@ -37,6 +41,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home posts={[]} />} />
           <Route path="/login" element={<Login />} />
+          <Route element={<Page404 />} />
         </Routes>
       </Router>
     </div>
