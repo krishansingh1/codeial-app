@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from '../styles/login.module.css';
 import toast, { Toaster } from 'react-hot-toast';
 import useAuth from '../hooks/useProvideAuth';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [name, setName] = useState('');
@@ -10,7 +11,7 @@ const SignUp = () => {
   const [confirmpassword, setConfirmpassword] = useState('');
   const [signingUp, setSigningUp] = useState('');
   const auth = useAuth();
-  //   const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +33,18 @@ const SignUp = () => {
       return setSigningUp(false);
     }
 
-    // const response = await auth.;
+    const response = await auth.signup(name, email, password, confirmpassword);
+
+    if (response.success) {
+      navigate('/login');
+      setSigningUp(false);
+
+      return toast.success('User Signup success fully, please login now');
+    } else {
+      toast.error(response.message);
+    }
+
+    setSigningUp(false);
   };
   return (
     <>
@@ -72,7 +84,9 @@ const SignUp = () => {
           />
         </div>
         <div className={styles.field}>
-          <button>Sign Up</button>
+          <button disabled={signingUp}>
+            {signingUp ? 'Signing up...' : 'Sign Up'}
+          </button>
         </div>
       </form>
     </>
