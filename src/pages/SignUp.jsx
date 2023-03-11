@@ -8,14 +8,23 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmpassword] = useState('');
+  const [signingUp, setSigningUp] = useState('');
   const auth = useAuth();
+  //   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSigningUp(true);
+
+    let error = false;
 
     if (!name || !email || !password || !confirmpassword) {
       toast.error('Please enter your responses in all the field');
-      return;
+      error = true;
+    }
+
+    if (password !== confirmpassword) {
+      toast.error('Make sure your password matches!');
     }
   };
   return (
