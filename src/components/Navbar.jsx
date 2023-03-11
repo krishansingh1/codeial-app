@@ -16,16 +16,18 @@ const Navbar = () => {
       </div>
 
       <div className={styles.rightNav}>
-        <div className={styles.user}>
-          <a href="/">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-              alt=""
-              className={styles.userDp}
-            />
-          </a>
-          <span>Krishan</span>
-        </div>
+        {auth.user && (
+          <div className={styles.user}>
+            <a href="/">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                alt=""
+                className={styles.userDp}
+              />
+            </a>
+            <span>{auth.user.name}</span>
+          </div>
+        )}
 
         <div className={styles.navLinks}>
           <ul>
