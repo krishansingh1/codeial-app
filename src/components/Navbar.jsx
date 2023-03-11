@@ -1,6 +1,9 @@
 import styles from '../styles/navbar.module.css';
 import { Link } from 'react-router-dom';
+import useAuth from '../hooks/useProvideAuth';
+
 const Navbar = () => {
+  const auth = useAuth();
   return (
     <div className={styles.nav}>
       <div className={styles.leftDiv}>
