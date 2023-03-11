@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from '../styles/login.module.css';
 import toast, { Toaster } from 'react-hot-toast';
-import { useAuth } from '../hooks/useProvideAuth';
+import useAuth from '../hooks/useProvideAuth';
 
 const SignUp = () => {
   const [name, setName] = useState('');
@@ -12,7 +12,7 @@ const SignUp = () => {
   const auth = useAuth();
   //   const history = useHistory();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSigningUp(true);
 
@@ -25,7 +25,14 @@ const SignUp = () => {
 
     if (password !== confirmpassword) {
       toast.error('Make sure your password matches!');
+      error = true;
     }
+
+    if (error) {
+      return setSigningUp(false);
+    }
+
+    // const response = await auth.;
   };
   return (
     <>
