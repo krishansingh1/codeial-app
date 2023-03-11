@@ -1,20 +1,25 @@
+import { useState } from 'react';
 import styles from '../styles/login.module.css';
 
 const SignUp = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmpassword, setConfirmpassword] = useState('');
   return (
     <form className={styles.loginForm}>
       <span className={styles.loginSignupHeader}>Sign Up</span>
       <div className={styles.field}>
-        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="Name" />
       </div>
       <div className={styles.field}>
-        <input type="text" name="" id="" placeholder="Last Name" />
+        <input type="email" placeholder="Email" />
       </div>
       <div className={styles.field}>
-        <input type="email" name="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
       </div>
       <div className={styles.field}>
-        <input type="password" name="" id="" placeholder="Password" />
+        <input type="password" placeholder="Confirm Password" />
       </div>
       <div className={styles.field}>
         <button>Sign Up</button>
