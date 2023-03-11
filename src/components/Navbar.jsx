@@ -42,7 +42,7 @@ const Navbar = () => {
                 </li>
 
                 <li>
-                  <Link to={"/signup"}>Register</a>
+                  <Link to={'/signup'}>Register</Link>
                 </li>
               </>
             )}
