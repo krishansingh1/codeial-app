@@ -12,7 +12,6 @@ const SignUp = () => {
   const [signingUp, setSigningUp] = useState('');
   const auth = useAuth();
   const navigate = useNavigate();
-  console.log(navigate);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
