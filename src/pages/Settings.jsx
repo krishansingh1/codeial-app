@@ -1,6 +1,8 @@
 import styles from '../styles/settings.module.css';
+import { useAuth } from '../hooks/useProvideAuth';
 
 const Settings = () => {
+  const auth = useAuth();
   return (
     <div className={styles.settings}>
       <div className={styles.imgContainer}>
