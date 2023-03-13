@@ -44,8 +44,8 @@ const Settings = () => {
         <button className={`button ${styles.editBtn}`} onClick={handleInput}>
           Edit Profile
         </button>
-        <button>Save</button>
-        <button>Go Back</button>
+        <button className={`button ${styles.saveBtn}`}>Save</button>
+        <button className={`button ${styles.goBack}`}>Go Back</button>
       </div>
     </div>
   );

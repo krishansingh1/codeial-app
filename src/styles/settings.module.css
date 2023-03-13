@@ -20,7 +20,7 @@
 }
 .settings .btnGrp {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .settings button {
   border-radius: 6px;
@@ -29,6 +29,7 @@
   font-size: 16px;
   border-radius: 3px;
   margin-top: 20px;
+  margin-right: 1rem;
 }
 .settings button:hover {
   cursor: pointer;
@@ -48,8 +49,8 @@
   padding: 10px 20px;
 }
 .settings .goBack {
+  border: none;
   color: #ef7917;
-  margin-top: 7px;
   font-size: 13px;
 }
 .settings .goBack:hover {
