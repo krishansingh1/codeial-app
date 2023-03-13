@@ -53,7 +53,7 @@ const Settings = () => {
 };
 
 const Styles = {
-  display: {
+  Display: {
     display: 'none',
   },
 };
