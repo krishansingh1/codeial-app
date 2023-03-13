@@ -9,7 +9,7 @@ const Settings = () => {
 
   const handleInput = (e) => {
     e.preventDefault();
-    setEditMode(!editMode);
+    setEditMode(true);
   };
 
   const displayStyle = {
@@ -44,7 +44,8 @@ const Settings = () => {
       <div className={styles.btnGrp}>
         <button
           className={`button ${styles.editBtn}`}
-          onClick={() => handleInput()}
+          onClick={handleInput}
+          disabled={editMode}
         >
           Edit Profile
         </button>
