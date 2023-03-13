@@ -7,7 +7,8 @@ const Settings = () => {
 
   const [editMode, setEditMode] = useState(false);
 
-  const handleInput = () => {
+  const handleInput = (e) => {
+    e.preventDefault();
     setEditMode(!editMode);
   };
 
