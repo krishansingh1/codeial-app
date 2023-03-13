@@ -11,7 +11,9 @@ const Settings = () => {
     setEditMode(!editMode);
   };
 
-  const displayStyle = {};
+  const displayStyle = {
+    display: editMode ? 'block' : 'none',
+  };
 
   return (
     <div className={styles.settings}>
