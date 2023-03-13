@@ -1,8 +1,13 @@
 import styles from '../styles/settings.module.css';
 import { useAuth } from '../hooks/useProvideAuth';
+import { useState } from 'react';
 
 const Settings = () => {
   const auth = useAuth();
+
+  const [editMode, setEditMode] = useState(false);
+
+  
   return (
     <div className={styles.settings}>
       <div className={styles.imgContainer}>
