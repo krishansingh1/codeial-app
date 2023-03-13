@@ -7,7 +7,14 @@ const Settings = () => {
 
   const [editMode, setEditMode] = useState(false);
 
-  
+  const handleInput = () => {
+    setEditMode(!editMode);
+    console.log(editMode);
+    if (editMode === true) {
+      Styles.display = { display: 'visible' };
+    }
+  };
+
   return (
     <div className={styles.settings}>
       <div className={styles.imgContainer}>
@@ -23,21 +30,32 @@ const Settings = () => {
         <div className={styles.fieldValue}>{auth.user?.name}</div>
       </div>
 
-      <div className={styles.field}>
+      <div className={styles.field} style={Styles.display}>
         <div className={styles.fieldLabel}>Password</div>
         <input type="password" />
       </div>
 
-      <div className={styles.field}>
+      <div className={styles.field} style={Styles.display}>
         <div className={styles.fieldLabel}>Confirm Password</div>
         <input type="password" />
       </div>
 
       <div className={styles.btnGrp}>
-        <button className={`button ${styles.editBtn}`}>Edit Profile</button>
+        <button
+          className={`button ${styles.editBtn}`}
+          onClick={handleInput}
+        >
+          Edit Profile
+        </button>
       </div>
     </div>
   );
+};
+
+const Styles = {
+  display: {
+    display: 'none',
+  },
 };
 
 export default Settings;
