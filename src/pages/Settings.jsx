@@ -41,7 +41,10 @@ const Settings = () => {
       </div>
 
       <div className={styles.btnGrp}>
-        <button className={`button ${styles.editBtn}`} onClick={handleInput}>
+        <button
+          className={`button ${styles.editBtn}`}
+          onClick={() => handleInput()}
+        >
           Edit Profile
         </button>
         <button className={`button ${styles.saveBtn}`} style={displayStyle}>
