@@ -35,7 +35,7 @@ const Settings = () => {
         <input type="password" />
       </div>
 
-      <div className={styles.field} style={Styles.display}>
+      <div className={styles.field} style={Styles.Display}>
         <div className={styles.fieldLabel}>Confirm Password</div>
         <input type="password" />
       </div>
