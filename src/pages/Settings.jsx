@@ -11,7 +11,7 @@ const Settings = () => {
     setEditMode(!editMode);
     console.log(editMode);
     if (editMode === true) {
-      Styles.display = { display: 'visible' };
+      Styles.Display = { display: 'visible' };
     }
   };
 
