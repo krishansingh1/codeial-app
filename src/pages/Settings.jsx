@@ -30,7 +30,7 @@ const Settings = () => {
         <div className={styles.fieldValue}>{auth.user?.name}</div>
       </div>
 
-      <div className={styles.field} style={Styles.display}>
+      <div className={styles.field} style={Styles.Display}>
         <div className={styles.fieldLabel}>Password</div>
         <input type="password" />
       </div>
